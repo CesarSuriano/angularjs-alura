@@ -1,6 +1,9 @@
-angular.module('alurapic').controller('FotosController', function($scope) {
-    $scope.foto = {
-        titulo: "Titulo da foto",
-        url: 'https://www.aprenderexcel.com.br//imagens/post/385/2901-1.jpg'
-    }
+angular.module('alurapic').controller('FotosController', function($scope, $http) {
+    
+    $http.get('v1/fotos').success(function(retorno){
+        $scope.fotos = retorno
+    }).error(function(error){
+        alert("Deu erro")
+    })
+    
 })

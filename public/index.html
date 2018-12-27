@@ -11,6 +11,7 @@
     <script src="js/lib/angular.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/controllers/fotos-controller.js"></script>
+    <script src="js/directives/minhas-diretivas.js"></script>
 </head>
 
 <body ng-controller="FotosController">
@@ -20,14 +21,9 @@
         </div>
 
         <div class="row">
-            <div ng-repeat="foto in fotos" class="panel panel-default col-md-3 col-sm-3">
-                <div class="panel-heading">
-                    {{foto.titulo}}
-                </div>
-                <div class="panel-body">
-                    <img class="img-responsive center-block" src="{{foto.url}}" alt="{{foto.titulo}}">
-                </div>
-            </div>
+            <meu-painel ng-repeat="foto in fotos" titulo="{{foto.titulo}}">
+                <img class="img-responsive center-block" src="{{foto.url}}" alt="{{foto.titulo}}">
+            </meu-painel>
         </div>
 
 

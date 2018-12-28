@@ -1,4 +1,4 @@
-angular.module('minhasDiretivas',[]).directive('meuPainel', function(){
+angular.module('minhasDiretivas', []).directive('meuPainel', function(){
     var ddo = {}
 
     ddo.restrict = "AE"
@@ -11,4 +11,15 @@ angular.module('minhasDiretivas',[]).directive('meuPainel', function(){
     ddo.templateUrl = 'js/directives/meu-painel.html'
 
     return ddo
+}).directive('minhaImagem', function(){
+    var ddo = {}
+
+    ddo.restrict = "AE"
+    ddo.scope = {
+        url: '@',
+        //titulo: '@'
+    }
+
+    ddo.templateUrl = 'js/directives/minha-imagem.html'
+    return ddo;
 })
